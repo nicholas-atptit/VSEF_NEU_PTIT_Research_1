@@ -1,0 +1,64 @@
+{
+  "export_script": "scripts/research/export_vn30_raw_full_paper_evidence.py",
+  "data_fetch_run": "no",
+  "benchmark_rerun": "no",
+  "model_training_run": "no",
+  "paper_generated": "no",
+  "repo_state": {
+    "branch": "research/vn30-legacy-rules-reference-and-stacking-v1",
+    "commit_hash": "35078143af530c18e0576d071c2471d2f923b186",
+    "git_status_summary": "## research/vn30-legacy-rules-reference-and-stacking-v1...origin/research/vn30-legacy-rules-reference-and-stacking-v1\n?? paper_evidence_export/\n?? paper_evidence_raw_full_export/\n?? reports/generated/paper_figure_data.zip\n?? reports/generated/paper_figures.zip\n?? reports/generated/vn30_legacy_rules_reference_and_stacking/robustness_selection/\n?? scripts/research/export_vn30_paper_evidence_package.py\n?? scripts/research/export_vn30_raw_full_paper_evidence.py\n?? scripts/research/run_vn30_legacy_robustness_selection.py\n?? vn30_paper_evidence_export.zip\n?? vn30_raw_full_paper_evidence_export.zip",
+    "export_timestamp": "2026-05-22T07:35:22+07:00",
+    "python_executable": "C:\\Users\\luong\\.venv\\Scripts\\python.exe",
+    "working_tree_clean": false,
+    "benchmark_rerun": "no",
+    "model_training_run": "no",
+    "data_fetch_run": "no",
+    "paper_generated": "no"
+  },
+  "result_sources": [
+    "reports/generated/vn30_model_universe_benchmark/final_results.csv",
+    "reports/generated/vn30_model_universe_benchmark/fair_tuning/fair_tuning_final_results.csv",
+    "reports/generated/vn30_model_universe_benchmark/knn_support/knn_support_final_results.csv",
+    "reports/generated/vn30_model_universe_benchmark/model_cooperation_transfer_audit/cooperation_final_results.csv",
+    "reports/generated/vn30_legacy_rules_reference_and_stacking/full_horizon/full_horizon_leaderboard.csv",
+    "reports/generated/vn30_legacy_rules_reference_and_stacking/model_comparison/legacy_model_final_results.csv",
+    "reports/generated/vn30_legacy_rules_reference_and_stacking/stacking/stacking_final_results.csv",
+    "reports/generated/vn30_legacy_rules_reference_and_stacking/targeted_improvement/final_results_by_track.csv",
+    "reports/generated/vn30_legacy_rules_reference_and_stacking/reference_reproduction/reference_reproduction_summary.csv",
+    "outputs/index_directional_benchmark/accuracy_summary.csv",
+    "outputs/index_directional_benchmark/baseline_summary.csv"
+  ],
+  "prediction_sources": [
+    "reports/generated/vn30_model_universe_benchmark/row_predictions.csv",
+    "reports/generated/vn30_model_universe_benchmark/fair_tuning/fair_tuning_row_predictions.csv",
+    "reports/generated/vn30_model_universe_benchmark/knn_support/knn_support_row_predictions.csv",
+    "reports/generated/vn30_model_universe_benchmark/model_cooperation_transfer_audit/cooperation_row_predictions.csv",
+    "reports/generated/vn30_legacy_rules_reference_and_stacking/model_comparison/legacy_model_row_predictions.csv",
+    "reports/generated/vn30_legacy_rules_reference_and_stacking/reference_reproduction/reference_reproduction_row_predictions.csv",
+    "outputs/vn30_hourly_selected_l2_logistic_h40_row_predictions/row_predictions.csv",
+    "reports/generated/vn30_legacy_rules_reference_and_stacking/stacking/stacking_row_predictions.csv",
+    "outputs/index_directional_benchmark/predicted_vs_actual.csv"
+  ],
+  "required_horizons": [
+    20,
+    40,
+    60,
+    80
+  ],
+  "supported_indices": [
+    "VNINDEX",
+    "VN30",
+    "HNXINDEX",
+    "HNX30",
+    "UPCOMINDEX",
+    "VN100"
+  ],
+  "missing_items": [],
+  "run_stats": {
+    "raw_data_files_copied": 247,
+    "model_output_files_copied": 235,
+    "prediction_artifact_files_copied": 11,
+    "row_level_prediction_rows": 2711484
+  }
+}

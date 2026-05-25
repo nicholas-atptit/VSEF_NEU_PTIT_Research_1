@@ -1,0 +1,43 @@
+{
+  "created_at_utc": "2026-05-17T10:56:42+00:00",
+  "scope": "index_only",
+  "indices": [
+    "VNINDEX",
+    "HNXINDEX",
+    "UPCOMINDEX",
+    "VN30",
+    "HNX30",
+    "VN100"
+  ],
+  "daily_horizons": [
+    1,
+    5,
+    10,
+    20,
+    40,
+    60
+  ],
+  "hourly_horizons": [
+    1,
+    4,
+    8,
+    20,
+    40,
+    60
+  ],
+  "models": [
+    "random_forest",
+    "xgboost",
+    "lightgbm"
+  ],
+  "baselines": [
+    "majority_class",
+    "previous_direction",
+    "always_up",
+    "random_seeded_direction",
+    "moving_average_signal"
+  ],
+  "no_resampling": true,
+  "no_stock_claims": true,
+  "no_trading_claims": true
+}

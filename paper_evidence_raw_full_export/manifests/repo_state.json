@@ -1,0 +1,12 @@
+{
+  "branch": "research/vn30-legacy-rules-reference-and-stacking-v1",
+  "commit_hash": "35078143af530c18e0576d071c2471d2f923b186",
+  "git_status_summary": "## research/vn30-legacy-rules-reference-and-stacking-v1...origin/research/vn30-legacy-rules-reference-and-stacking-v1\n?? paper_evidence_export/\n?? paper_evidence_raw_full_export/\n?? reports/generated/paper_figure_data.zip\n?? reports/generated/paper_figures.zip\n?? reports/generated/vn30_legacy_rules_reference_and_stacking/robustness_selection/\n?? scripts/research/export_vn30_paper_evidence_package.py\n?? scripts/research/export_vn30_raw_full_paper_evidence.py\n?? scripts/research/run_vn30_legacy_robustness_selection.py\n?? vn30_paper_evidence_export.zip\n?? vn30_raw_full_paper_evidence_export.zip",
+  "export_timestamp": "2026-05-22T07:35:22+07:00",
+  "python_executable": "C:\\Users\\luong\\.venv\\Scripts\\python.exe",
+  "working_tree_clean": false,
+  "benchmark_rerun": "no",
+  "model_training_run": "no",
+  "data_fetch_run": "no",
+  "paper_generated": "no"
+}

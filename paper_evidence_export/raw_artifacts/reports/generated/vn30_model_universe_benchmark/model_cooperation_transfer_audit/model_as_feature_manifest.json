@@ -1,0 +1,24 @@
+{
+  "auxiliary_prediction_features": [
+    "logistic_l2",
+    "elastic_net",
+    "linear_svm",
+    "random_forest",
+    "extra_trees",
+    "xgboost",
+    "lightgbm",
+    "catboost",
+    "regime_router",
+    "technical_rule_macd",
+    "knn_probability"
+  ],
+  "meta_train_scope": "validation_predictions_only",
+  "final_labels_used": false,
+  "meta_models": [
+    "logistic_meta",
+    "elastic_net_meta",
+    "lightgbm_meta",
+    "xgboost_meta",
+    "random_forest_meta"
+  ]
+}

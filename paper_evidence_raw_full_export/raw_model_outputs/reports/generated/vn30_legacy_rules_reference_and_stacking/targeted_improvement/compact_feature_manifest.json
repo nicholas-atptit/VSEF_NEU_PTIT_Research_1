@@ -1,0 +1,149 @@
+{
+  "selector": "train_only_l1_abs_coef",
+  "ranked_features": [
+    {
+      "feature": "close_sma_ratio_60",
+      "abs_coef": 1.3435280709412154
+    },
+    {
+      "feature": "month",
+      "abs_coef": 0.9351112104896433
+    },
+    {
+      "feature": "close_sma_ratio_20",
+      "abs_coef": 0.6528836974457478
+    },
+    {
+      "feature": "day_of_month",
+      "abs_coef": 0.48360278798646017
+    },
+    {
+      "feature": "quarter",
+      "abs_coef": 0.4191190313580292
+    },
+    {
+      "feature": "momentum_60",
+      "abs_coef": 0.38726154120272205
+    },
+    {
+      "feature": "rolling_return_vol_60",
+      "abs_coef": 0.2896642846451342
+    },
+    {
+      "feature": "macd_hist",
+      "abs_coef": 0.19890196274261512
+    },
+    {
+      "feature": "roll_vol_change_40",
+      "abs_coef": 0.1749305600146777
+    },
+    {
+      "feature": "rolling_return_vol_20",
+      "abs_coef": 0.13364074404690368
+    },
+    {
+      "feature": "high_low_range",
+      "abs_coef": 0.12247521892124635
+    },
+    {
+      "feature": "roll_vol_40",
+      "abs_coef": 0.09686841111693192
+    },
+    {
+      "feature": "volume_shock_20",
+      "abs_coef": 0.095349290453306
+    },
+    {
+      "feature": "rsi_14",
+      "abs_coef": 0.0851381511512359
+    },
+    {
+      "feature": "roll_ret_40",
+      "abs_coef": 0.08343251749201681
+    },
+    {
+      "feature": "close_sma_ratio_10",
+      "abs_coef": 0.08264589773800997
+    },
+    {
+      "feature": "return_1",
+      "abs_coef": 0.07334258549005912
+    },
+    {
+      "feature": "roll_vol_change_20",
+      "abs_coef": 0.0647876408718387
+    },
+    {
+      "feature": "rolling_return_vol_5",
+      "abs_coef": 0.0569444294217336
+    },
+    {
+      "feature": "macd_signal",
+      "abs_coef": 0.05688937282488852
+    },
+    {
+      "feature": "close_position_in_range",
+      "abs_coef": 0.051076119945845065
+    },
+    {
+      "feature": "roll_vol_8",
+      "abs_coef": 0.04943410299650197
+    },
+    {
+      "feature": "open_close_spread",
+      "abs_coef": 0.0406252898271418
+    },
+    {
+      "feature": "roll_vol_change_8",
+      "abs_coef": 0.036958301995941856
+    },
+    {
+      "feature": "roll_ret_4",
+      "abs_coef": 0.03551403160965892
+    },
+    {
+      "feature": "momentum_10",
+      "abs_coef": 0.033429576333069075
+    },
+    {
+      "feature": "close_sma_ratio_5",
+      "abs_coef": 0.03087712446278882
+    },
+    {
+      "feature": "return_3",
+      "abs_coef": 0.02737964140355546
+    },
+    {
+      "feature": "volume_change_1",
+      "abs_coef": 0.019466331752952336
+    },
+    {
+      "feature": "lag_ret_4",
+      "abs_coef": 0.013756938398562303
+    },
+    {
+      "feature": "return_1_lag_10",
+      "abs_coef": 0.010264990534453629
+    },
+    {
+      "feature": "roll_ret_20",
+      "abs_coef": 0.007517835585301466
+    },
+    {
+      "feature": "return_1_lag_20",
+      "abs_coef": 0.007256709618450871
+    },
+    {
+      "feature": "hour",
+      "abs_coef": 0.006196575219315872
+    },
+    {
+      "feature": "return_1_lag_5",
+      "abs_coef": 0.0018630489173890482
+    },
+    {
+      "feature": "roll_ret_8",
+      "abs_coef": 0.0004329792554477267
+    }
+  ]
+}

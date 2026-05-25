@@ -1,0 +1,12 @@
+{
+  "status": "run",
+  "selected_candidate_id": "lightgbm__h40__own_plus_market_context",
+  "selected_on_validation": true,
+  "final_evaluation_scoring_only": true,
+  "confidence_abstention": false,
+  "instrument_subset": false,
+  "topk_ranking_substitution": false,
+  "stock_instrument_count": 30,
+  "index_instrument_count": 6,
+  "total_instrument_count": 36
+}

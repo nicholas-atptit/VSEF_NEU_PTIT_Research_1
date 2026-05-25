@@ -1,0 +1,240 @@
+{
+  "run_id": "vn30_legacy_targeted_improvement_tracks_v1",
+  "data_fetch": false,
+  "provider_behavior_changed": false,
+  "stacking_main_candidate": false,
+  "selection_source": "validation_only",
+  "final_window_role": "scoring_only",
+  "horizon": 40,
+  "current_best_accuracy": 0.6163475699558174,
+  "old_reference_accuracy": 0.6151202749140894,
+  "majority_baseline": 0.5044182621502209,
+  "feature_manifest": {
+    "run_id": "vn30_hourly_validation_safe_improvement_tracks_v1",
+    "data_fetch": false,
+    "provider_behavior_changed": false,
+    "stock_ticker_count": 30,
+    "stock_tickers": [
+      "ACB",
+      "BID",
+      "BCM",
+      "BVH",
+      "CTG",
+      "FPT",
+      "GAS",
+      "GVR",
+      "HDB",
+      "HPG",
+      "LPB",
+      "MBB",
+      "MSN",
+      "MWG",
+      "PLX",
+      "SAB",
+      "SHB",
+      "SSB",
+      "SSI",
+      "STB",
+      "TCB",
+      "TPB",
+      "VCB",
+      "VHM",
+      "VIB",
+      "VIC",
+      "VJC",
+      "VNM",
+      "VPB",
+      "VRE"
+    ],
+    "stock_rows_loaded": 44904,
+    "index_codes_loaded": [
+      "HNXINDEX",
+      "UPCOMINDEX",
+      "VN30",
+      "VNINDEX"
+    ],
+    "feature_families": {
+      "baseline_C_closest": {
+        "feature_count": 99,
+        "base_feature_set": "feature_set_C_closest",
+        "added_feature_columns": [],
+        "added_feature_count": 0,
+        "all_added_features_lagged_or_ex_ante": true,
+        "future_regime_labels": false,
+        "future_return_features": false,
+        "target_leakage_features": false,
+        "same_row_target_leakage": false,
+        "final_window_derived_features": false,
+        "index_context_role": "lagged market-context features only"
+      },
+      "regime_context": {
+        "feature_count": 133,
+        "base_feature_set": "feature_set_C_closest",
+        "added_feature_columns": [
+          "vn30_direction_lag_1_ctx",
+          "vn30_mean_10_lag_ctx",
+          "vn30_mean_20_lag_ctx",
+          "vn30_mean_60_lag_ctx",
+          "vn30_ret_lag_10_ctx",
+          "vn30_ret_lag_1_ctx",
+          "vn30_ret_lag_20_ctx",
+          "vn30_ret_lag_2_ctx",
+          "vn30_ret_lag_3_ctx",
+          "vn30_ret_lag_5_ctx",
+          "vn30_trend_20_lag_ctx",
+          "vn30_trend_60_lag_ctx",
+          "vn30_trend_regime_ctx",
+          "vn30_vol_10_lag_ctx",
+          "vn30_vol_20_lag_ctx",
+          "vn30_vol_60_lag_ctx",
+          "vn30_vol_regime_ctx",
+          "vnindex_direction_lag_1_ctx",
+          "vnindex_mean_10_lag_ctx",
+          "vnindex_mean_20_lag_ctx",
+          "vnindex_mean_60_lag_ctx",
+          "vnindex_ret_lag_10_ctx",
+          "vnindex_ret_lag_1_ctx",
+          "vnindex_ret_lag_20_ctx",
+          "vnindex_ret_lag_2_ctx",
+          "vnindex_ret_lag_3_ctx",
+          "vnindex_ret_lag_5_ctx",
+          "vnindex_trend_20_lag_ctx",
+          "vnindex_trend_60_lag_ctx",
+          "vnindex_trend_regime_ctx",
+          "vnindex_vol_10_lag_ctx",
+          "vnindex_vol_20_lag_ctx",
+          "vnindex_vol_60_lag_ctx",
+          "vnindex_vol_regime_ctx"
+        ],
+        "added_feature_count": 34,
+        "all_added_features_lagged_or_ex_ante": true,
+        "future_regime_labels": false,
+        "future_return_features": false,
+        "target_leakage_features": false,
+        "same_row_target_leakage": false,
+        "final_window_derived_features": false,
+        "index_context_role": "lagged market-context features only"
+      },
+      "breadth_context": {
+        "feature_count": 106,
+        "base_feature_set": "feature_set_C_closest",
+        "added_feature_columns": [
+          "breadth_stock_count",
+          "breadth_positive_lag_1",
+          "breadth_avg_return_lag_1",
+          "breadth_dispersion_lag_1",
+          "breadth_positive_trend_5_lag",
+          "breadth_positive_trend_20_lag",
+          "breadth_trend_lag"
+        ],
+        "added_feature_count": 7,
+        "all_added_features_lagged_or_ex_ante": true,
+        "future_regime_labels": false,
+        "future_return_features": false,
+        "target_leakage_features": false,
+        "same_row_target_leakage": false,
+        "final_window_derived_features": false,
+        "index_context_role": "lagged market-context features only"
+      },
+      "relative_strength": {
+        "feature_count": 105,
+        "base_feature_set": "feature_set_C_closest",
+        "added_feature_columns": [
+          "relative_ret_minus_vnindex_lag_1",
+          "relative_ret_minus_vn30_lag_1",
+          "relative_momentum_vnindex_20_lag",
+          "relative_momentum_vn30_20_lag",
+          "relative_vol_vnindex_20_lag",
+          "relative_vol_vn30_20_lag"
+        ],
+        "added_feature_count": 6,
+        "all_added_features_lagged_or_ex_ante": true,
+        "future_regime_labels": false,
+        "future_return_features": false,
+        "target_leakage_features": false,
+        "same_row_target_leakage": false,
+        "final_window_derived_features": false,
+        "index_context_role": "lagged market-context features only"
+      },
+      "volatility_normalized": {
+        "feature_count": 103,
+        "base_feature_set": "feature_set_C_closest",
+        "added_feature_columns": [
+          "return_over_vol_20_lag",
+          "return_zscore_20_lag",
+          "high_low_range_shock_20_lag",
+          "volume_shock_20_lag_safe"
+        ],
+        "added_feature_count": 4,
+        "all_added_features_lagged_or_ex_ante": true,
+        "future_regime_labels": false,
+        "future_return_features": false,
+        "target_leakage_features": false,
+        "same_row_target_leakage": false,
+        "final_window_derived_features": false,
+        "index_context_role": "lagged market-context features only"
+      },
+      "interaction_context": {
+        "feature_count": 153,
+        "base_feature_set": "feature_set_C_closest",
+        "added_feature_columns": [
+          "interaction_momentum_x_market_direction",
+          "interaction_relative_strength_x_market_vol",
+          "interaction_volnorm_momentum_x_breadth"
+        ],
+        "added_feature_count": 3,
+        "all_added_features_lagged_or_ex_ante": true,
+        "future_regime_labels": false,
+        "future_return_features": false,
+        "target_leakage_features": false,
+        "same_row_target_leakage": false,
+        "final_window_derived_features": false,
+        "index_context_role": "lagged market-context features only"
+      }
+    }
+  },
+  "selected_candidates": [
+    {
+      "track": "current_best_comparator",
+      "candidate_id": "legacy_single__logistic_l2__baseline_C_closest__h40__validation_selected_threshold__t0p550",
+      "candidate_classification": "failed_improvement",
+      "final_accuracy": 0.6163475699558174
+    },
+    {
+      "track": "drag_ticker_repair",
+      "candidate_id": "targeted__drag_ticker_repair__weak_ticker_scaled_l2_h40",
+      "candidate_classification": "failed_improvement",
+      "final_accuracy": 0.5930289641629848
+    },
+    {
+      "track": "feature_selection_compact",
+      "candidate_id": "targeted__compact_feature_set__l1_rank_top20__t0p6",
+      "candidate_classification": "failed_improvement",
+      "final_accuracy": 0.5814923907707413
+    },
+    {
+      "track": "regime_specific_router",
+      "candidate_id": "targeted__exante_regime_threshold_router__logistic_l2_h40",
+      "candidate_classification": "failed_improvement",
+      "final_accuracy": 0.6136475208640157
+    },
+    {
+      "track": "regularized_linear_models",
+      "candidate_id": "targeted__regularized_linear__logistic_l2__c1p0__rna__t0p6",
+      "candidate_classification": "failed_improvement",
+      "final_accuracy": 0.5915562101129112
+    },
+    {
+      "track": "ticker_group_threshold_calibration",
+      "candidate_id": "targeted__ticker_group_sector_threshold_calibration__logistic_l2_h40",
+      "candidate_classification": "failed_improvement",
+      "final_accuracy": 0.6089837997054491
+    },
+    {
+      "track": "ticker_specific_threshold_calibration",
+      "candidate_id": "targeted__ticker_threshold_calibration__logistic_l2_h40",
+      "candidate_classification": "failed_improvement",
+      "final_accuracy": 0.6114383897889053
+    }
+  ]
+}

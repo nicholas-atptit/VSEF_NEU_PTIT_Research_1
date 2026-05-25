@@ -1,0 +1,62 @@
+{
+  "data_fetch": false,
+  "provider_behavior_changed": false,
+  "base_model_selection": "validation_only_from_legacy_model_comparison_fixed_threshold_candidates",
+  "base_candidate_ids": [
+    "legacy_deep__gru__baseline_C_sequence32__h40__seq16__fixed_0p50",
+    "legacy_deep__lstm__baseline_C_sequence32__h40__seq16__fixed_0p50",
+    "legacy_deep__tcn__baseline_C_sequence32__h40__seq16__fixed_0p50",
+    "legacy_single__extra_trees__breadth_context__h40__fixed_0p50__t0p500",
+    "legacy_single__hist_gradient_boosting__breadth_context__h40__fixed_0p50__t0p500",
+    "legacy_single__lightgbm__combined_context__h40__fixed_0p50__t0p500",
+    "legacy_single__logistic_elastic_net__baseline_C_closest__h40__fixed_0p50__t0p500",
+    "legacy_single__logistic_l2__breadth_context__h40__fixed_0p50__t0p500",
+    "legacy_single__random_forest__breadth_context__h40__fixed_0p50__t0p500",
+    "legacy_single__xgboost__breadth_context__h40__fixed_0p50__t0p500"
+  ],
+  "ensemble_weights": {
+    "validation_accuracy_weighted_soft_vote": {
+      "legacy_deep__gru__baseline_C_sequence32__h40__seq16__fixed_0p50": 0.48931068931068933,
+      "legacy_deep__lstm__baseline_C_sequence32__h40__seq16__fixed_0p50": 0.49547119547119545,
+      "legacy_deep__tcn__baseline_C_sequence32__h40__seq16__fixed_0p50": 0.49244089244089245,
+      "legacy_single__extra_trees__breadth_context__h40__fixed_0p50__t0p500": 0.498001998001998,
+      "legacy_single__hist_gradient_boosting__breadth_context__h40__fixed_0p50__t0p500": 0.5111888111888112,
+      "legacy_single__lightgbm__combined_context__h40__fixed_0p50__t0p500": 0.5171162171162171,
+      "legacy_single__logistic_elastic_net__baseline_C_closest__h40__fixed_0p50__t0p500": 0.5184815184815185,
+      "legacy_single__logistic_l2__breadth_context__h40__fixed_0p50__t0p500": 0.5191475191475191,
+      "legacy_single__random_forest__breadth_context__h40__fixed_0p50__t0p500": 0.5032301032301032,
+      "legacy_single__xgboost__breadth_context__h40__fixed_0p50__t0p500": 0.5169164169164169
+    },
+    "validation_lift_weighted_soft_vote": {
+      "legacy_deep__gru__baseline_C_sequence32__h40__seq16__fixed_0p50": 0.0,
+      "legacy_deep__lstm__baseline_C_sequence32__h40__seq16__fixed_0p50": 0.0,
+      "legacy_deep__tcn__baseline_C_sequence32__h40__seq16__fixed_0p50": 0.0,
+      "legacy_single__extra_trees__breadth_context__h40__fixed_0p50__t0p500": 0.0,
+      "legacy_single__hist_gradient_boosting__breadth_context__h40__fixed_0p50__t0p500": 0.0,
+      "legacy_single__lightgbm__combined_context__h40__fixed_0p50__t0p500": 0.004995004995005048,
+      "legacy_single__logistic_elastic_net__baseline_C_closest__h40__fixed_0p50__t0p500": 0.006360306360306378,
+      "legacy_single__logistic_l2__breadth_context__h40__fixed_0p50__t0p500": 0.0070263070263070215,
+      "legacy_single__random_forest__breadth_context__h40__fixed_0p50__t0p500": 0.0,
+      "legacy_single__xgboost__breadth_context__h40__fixed_0p50__t0p500": 0.004795204795204788
+    },
+    "stability_weighted_soft_vote": {
+      "legacy_deep__gru__baseline_C_sequence32__h40__seq16__fixed_0p50": 0.0,
+      "legacy_deep__lstm__baseline_C_sequence32__h40__seq16__fixed_0p50": 0.0,
+      "legacy_deep__tcn__baseline_C_sequence32__h40__seq16__fixed_0p50": 0.0,
+      "legacy_single__extra_trees__breadth_context__h40__fixed_0p50__t0p500": 0.0,
+      "legacy_single__hist_gradient_boosting__breadth_context__h40__fixed_0p50__t0p500": 0.0,
+      "legacy_single__lightgbm__combined_context__h40__fixed_0p50__t0p500": 0.0,
+      "legacy_single__logistic_elastic_net__baseline_C_closest__h40__fixed_0p50__t0p500": 0.0,
+      "legacy_single__logistic_l2__breadth_context__h40__fixed_0p50__t0p500": 0.0,
+      "legacy_single__random_forest__breadth_context__h40__fixed_0p50__t0p500": 0.0,
+      "legacy_single__xgboost__breadth_context__h40__fixed_0p50__t0p500": 0.0
+    }
+  },
+  "meta_training_split": "validation",
+  "final_labels_used_for_meta_training": false,
+  "final_accuracy_used_for_selection": false,
+  "confidence_abstention": false,
+  "ticker_subset": false,
+  "topk": false,
+  "full_ticker_coverage_required": true
+}

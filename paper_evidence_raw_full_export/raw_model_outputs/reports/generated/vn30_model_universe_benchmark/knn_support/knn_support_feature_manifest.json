@@ -1,0 +1,41 @@
+{
+  "knn_neighbor_space": "baseline_C_closest numeric columns",
+  "neighbor_space_feature_count": 99,
+  "support_features": [
+    "knn_up_ratio_k5",
+    "knn_up_ratio_k11",
+    "knn_up_ratio_k21",
+    "knn_mean_distance_k11",
+    "knn_distance_weighted_up_ratio_k11",
+    "knn_similar_regime_up_ratio",
+    "knn_neighbor_volatility_mean",
+    "knn_prediction_probability"
+  ],
+  "scaler_fit_scope": "train_only",
+  "train_rows_neighbor_rule": "leave_one_out_train_neighbors_only",
+  "validation_neighbor_rule": "train_neighbors_only",
+  "final_neighbor_rule": "train_plus_validation_neighbors_only_after_validation_lock",
+  "final_labels_used": false,
+  "max_k": 21,
+  "distance_metric": "minkowski_p2",
+  "volatility_source_column": "rolling_return_vol_20",
+  "output_dir": "reports/generated/vn30_model_universe_benchmark/knn_support",
+  "data_fetch": false,
+  "provider_behavior_changed": false,
+  "paper_docx_generated": false,
+  "train_end": "2023-12-31 23:59:59",
+  "validation_start": "2024-01-01 00:00:00",
+  "validation_end": "2024-12-31 23:59:59",
+  "final_start": "2025-01-01 00:00:00",
+  "source_manifest_keys": [
+    "comprehensive_model_universe_benchmark",
+    "data_fetch",
+    "feature_families",
+    "index_codes_loaded",
+    "provider_behavior_changed",
+    "run_id",
+    "stock_rows_loaded",
+    "stock_ticker_count",
+    "stock_tickers"
+  ]
+}

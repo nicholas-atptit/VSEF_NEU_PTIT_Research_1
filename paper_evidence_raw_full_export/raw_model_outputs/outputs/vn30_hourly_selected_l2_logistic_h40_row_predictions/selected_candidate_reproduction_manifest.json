@@ -1,0 +1,104 @@
+{
+  "source_run_id": "vn30_hourly_target62_selected_l2_logistic_h40_row_reproduction_v1",
+  "created_at_utc": "2026-05-18T18:47:22.156742+00:00",
+  "purpose": "save row-level predictions for already selected candidate only",
+  "not_model_selection": true,
+  "not_new_tuning": true,
+  "broad_benchmark_run": false,
+  "data_fetch": false,
+  "confidence_abstention": false,
+  "ticker_subset": false,
+  "topk_ranking": false,
+  "paper_docx_edited": false,
+  "selected_candidate_changed": false,
+  "selected_candidate_source": "outputs/vn30_hourly_track_a_target62_validation_safe/selected_candidate_summary.csv",
+  "run_config_source": "outputs/vn30_hourly_track_a_target62_validation_safe/run_config.json",
+  "selected_candidate": {
+    "model": "l2_logistic",
+    "horizon": 40,
+    "feature_set": "feature_set_C_closest",
+    "threshold": 0.5,
+    "existing_final_accuracy": 0.6151202749140894,
+    "existing_final_rows": 4074
+  },
+  "fixed_rerun": {
+    "model": "l2_logistic",
+    "model_label": "L2 Logistic",
+    "horizon": 40,
+    "feature_set": "feature_set_C_closest",
+    "threshold": 0.5,
+    "same_split_constants": true,
+    "same_feature_builder": "scripts.research.vn30_hourly_dual_track_common.build_feature_set_c",
+    "same_label_builder": "scripts.research.vn30_hourly_dual_track_common.add_absolute_labels",
+    "same_model_factory": "scripts.research.run_vn30_hourly_track_a_target62_validation_safe.candidate_model"
+  },
+  "original_run_config_selection_rule": {
+    "validation_lift_positive": true,
+    "within_best_validation_accuracy": 0.0075,
+    "prefer_h40": true,
+    "model_order": {
+      "l2_logistic": 0,
+      "balanced_l2_logistic": 1,
+      "elasticnet_logistic": 2,
+      "ridge_logistic_c1": 3
+    },
+    "prefer_threshold_closest_to": 0.5,
+    "feature_order": {
+      "regime_feature_v2": 0,
+      "feature_set_C_closest": 1,
+      "stock_lagged_rolling_plus_index_context": 2
+    },
+    "final_accuracy_used_for_selection": false
+  },
+  "baselines": {
+    "baseline_logistic_h40": 0.6043200785468826,
+    "historical_rf_h60": 0.6031
+  },
+  "metrics": {
+    "stock_cache_dir": "data/market_cache/vnstock_data/vn30/hourly_2015",
+    "index_cache_dir": "data/market_cache/vnstock_data/indices/hourly_2015",
+    "ticker_count": 30,
+    "missing_stock_files": [],
+    "missing_index_files": [],
+    "model": "l2_logistic",
+    "model_label": "L2 Logistic",
+    "horizon": 40,
+    "feature_set": "feature_set_C_closest",
+    "threshold": 0.5,
+    "feature_count": 99,
+    "train_rows": 9600,
+    "validation_rows": 30030,
+    "final_rows": 4074,
+    "validation_accuracy": 0.5188145188145188,
+    "final_accuracy": 0.6151202749140894,
+    "validation_majority_baseline": 0.48787878787878786,
+    "final_majority_baseline": 0.5044182621502209,
+    "validation_lift_vs_majority": 0.030935730935730932,
+    "final_lift_vs_majority": 0.11070201276386848,
+    "majority_prediction": 0,
+    "split_train_end": "2023-12-31 23:59:59",
+    "split_validation_start": "2024-01-01 00:00:00",
+    "split_validation_end": "2024-12-31 23:59:59",
+    "split_final_start": "2025-01-01 00:00:00"
+  },
+  "summary": {
+    "existing_final_accuracy": 0.6151202749140894,
+    "reproduced_final_accuracy": 0.6151202749140894,
+    "absolute_difference_pp": 0.0,
+    "existing_final_rows": 4074,
+    "reproduced_final_rows": 4074,
+    "rows_difference": 0,
+    "existing_majority_baseline": 0.5044182621502209,
+    "reproduced_majority_baseline": 0.5044182621502209,
+    "existing_lift_vs_majority": 0.1107020127638684,
+    "reproduced_lift_vs_majority": 0.11070201276386848,
+    "reproduction_status": "passed"
+  },
+  "status_reason": "within tolerance",
+  "outputs": [
+    "outputs/vn30_hourly_selected_l2_logistic_h40_row_predictions/row_predictions.csv",
+    "outputs/vn30_hourly_selected_l2_logistic_h40_row_predictions/selected_candidate_reproduction_summary.csv",
+    "outputs/vn30_hourly_selected_l2_logistic_h40_row_predictions/selected_candidate_reproduction_manifest.json",
+    "outputs/vn30_hourly_selected_l2_logistic_h40_row_predictions/selected_candidate_reproduction_log.md"
+  ]
+}

@@ -1,0 +1,10 @@
+branch: research/vn30-legacy-rules-reference-and-stacking-v1
+commit: 35078143af530c18e0576d071c2471d2f923b186
+
+commit 35078143af530c18e0576d071c2471d2f923b186
+Author:     Nicholas <luongminhquan34@gmail.com>
+AuthorDate: Thu May 21 21:54:48 2026 +0700
+Commit:     Nicholas <luongminhquan34@gmail.com>
+CommitDate: Thu May 21 21:54:48 2026 +0700
+
+    research: evaluate VN30 model cooperation and transfer audit

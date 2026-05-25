@@ -1,0 +1,28 @@
+# Selected VN30 Hourly L2 Logistic h40 Row-Level Reproduction Log
+
+- Purpose: reproduce the already selected candidate only to save row-level predictions.
+- New model selection: no.
+- New tuning: no.
+- Broad benchmark sweep: no.
+- Data fetch: no.
+- Confidence abstention: no.
+- Ticker subset: no.
+- Top-k/ranking: no.
+- DOCX/paper rewrite: no.
+- Trading/profitability/live-deployment claim: no.
+- Source run id: `vn30_hourly_target62_selected_l2_logistic_h40_row_reproduction_v1`.
+- Selected candidate source: `outputs/vn30_hourly_track_a_target62_validation_safe/selected_candidate_summary.csv`.
+- Run config source: `outputs/vn30_hourly_track_a_target62_validation_safe/run_config.json`.
+- Candidate: `l2_logistic` h=40 `feature_set_C_closest` threshold=0.50.
+- Train rows: 9600.
+- Validation rows: 30030.
+- Final rows: 4074.
+- Existing final accuracy: 61.51%.
+- Reproduced final accuracy: 61.51%.
+- Absolute difference: 0.000000 percentage points.
+- Existing majority baseline: 50.44%.
+- Reproduced majority baseline: 50.44%.
+- Existing lift vs majority: +11.0702pp.
+- Reproduced lift vs majority: +11.0702pp.
+- Reproduction status: `passed`.
+- Status reason: within tolerance.

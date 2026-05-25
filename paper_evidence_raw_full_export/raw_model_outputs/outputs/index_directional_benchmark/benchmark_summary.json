@@ -1,0 +1,100 @@
+{
+  "created_at_utc": "2026-05-17T10:57:16+00:00",
+  "input_combinations": [
+    {
+      "index_code": "VNINDEX",
+      "frequency": "1D",
+      "rows": 2830
+    },
+    {
+      "index_code": "HNXINDEX",
+      "frequency": "1D",
+      "rows": 2835
+    },
+    {
+      "index_code": "UPCOMINDEX",
+      "frequency": "1D",
+      "rows": 2834
+    },
+    {
+      "index_code": "VN30",
+      "frequency": "1D",
+      "rows": 2819
+    },
+    {
+      "index_code": "HNX30",
+      "frequency": "1D",
+      "rows": 2822
+    },
+    {
+      "index_code": "VNINDEX",
+      "frequency": "1H",
+      "rows": 995
+    },
+    {
+      "index_code": "HNXINDEX",
+      "frequency": "1H",
+      "rows": 994
+    },
+    {
+      "index_code": "UPCOMINDEX",
+      "frequency": "1H",
+      "rows": 994
+    },
+    {
+      "index_code": "VN30",
+      "frequency": "1H",
+      "rows": 995
+    },
+    {
+      "index_code": "HNX30",
+      "frequency": "1H",
+      "rows": 962
+    },
+    {
+      "index_code": "VN100",
+      "frequency": "1H",
+      "rows": 1570
+    }
+  ],
+  "results": 198,
+  "predicted_rows": 49224,
+  "any_pass_60": true,
+  "pass_60_count": 39,
+  "best_daily": {
+    "index_code": "UPCOMINDEX",
+    "frequency": "1D",
+    "model": "xgboost",
+    "horizon": 1,
+    "validation_accuracy": 0.984,
+    "validation_rows": 250,
+    "final_accuracy": 0.9760479041916168,
+    "final_rows": 334,
+    "final_coverage": 1.0,
+    "baseline_name": "majority_class",
+    "baseline_accuracy": 0.9760479041916168,
+    "delta_vs_baseline": 0.0,
+    "pass_60": true,
+    "claim_level": "baseline60_index_directional"
+  },
+  "best_hourly": {
+    "index_code": "VNINDEX",
+    "frequency": "1H",
+    "model": "xgboost",
+    "horizon": 40,
+    "validation_accuracy": 0.507537688442211,
+    "validation_rows": 199,
+    "final_accuracy": 0.6666666666666666,
+    "final_rows": 159,
+    "final_coverage": 1.0,
+    "baseline_name": "majority_class",
+    "baseline_accuracy": 0.6352201257861635,
+    "delta_vs_baseline": 0.03144654088050314,
+    "pass_60": true,
+    "claim_level": "baseline60_index_directional"
+  },
+  "daily_to_hourly_resampling_used": false,
+  "hourly_to_daily_resampling_used": false,
+  "stock_claims_made": false,
+  "trading_profitability_claims_made": false
+}
