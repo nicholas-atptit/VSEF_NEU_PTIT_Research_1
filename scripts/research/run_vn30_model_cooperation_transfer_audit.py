@@ -57,6 +57,12 @@ from scripts.research.run_vn30_hourly_validation_safe_improvement_tracks import 
     VAL_START,
 )
 from scripts.research.vn30_hourly_dual_track_common import REPO_ROOT, active_stock_tickers, add_absolute_labels, rel  # noqa: E402
+from scripts.research.vn30_comprehensive_paper_framing import (  # noqa: E402
+    COOPERATION_ROLE_PARAGRAPHS,
+    PAPER_TITLE,
+    academic_role_lines,
+    main_claim_boundary_lines,
+)
 
 warnings.filterwarnings("ignore", message="Skipping features without any observed values.*")
 warnings.filterwarnings("ignore", message="X does not have valid feature names.*")
@@ -747,6 +753,12 @@ def write_reports(final_results: pd.DataFrame, selected: pd.DataFrame, aggregate
     lines = [
         "# VN30 Model Cooperation Transfer Audit Summary",
         "",
+        f"Paper title: {PAPER_TITLE}",
+        "",
+        *academic_role_lines("Academic Role in the Comprehensive Paper", COOPERATION_ROLE_PARAGRAPHS),
+        "",
+        "## Run Scope",
+        "",
         f"- Candidate rows: {len(final_results)}.",
         f"- Tracks run: {', '.join(sorted(final_results['track'].astype(str).unique()))}.",
         "- Selection: validation-only.",
@@ -764,7 +776,22 @@ def write_reports(final_results: pd.DataFrame, selected: pd.DataFrame, aggregate
         fair.markdown_table(descriptive[["candidate_id", "track", "model_id", "validation_accuracy", "final_accuracy", "selected_by_validation_yes_no", "claim_eligible_yes_no", "overfit_risk"]], max_rows=12),
     ]
     write_markdown(OUTPUT_DIR / "cooperation_summary.md", "\n".join(lines))
-    write_markdown(OUTPUT_DIR / "cooperation_claim_boundary.md", "\n".join(["# Cooperation Claim Boundary", "", "- Claim eligibility requires validation-only selection, full 30-stock coverage, leakage audit pass, stability audit, and no high overfit risk.", "- Descriptive final leaderboard rows do not override validation-only selection.", "- No trading, profitability, investment recommendation, or live-deployment claim is made.", "", "## Claim Eligible Rows", "", fair.markdown_table(claim[["candidate_id", "track", "model_id", "validation_accuracy", "final_accuracy", "overfit_risk"]] if not claim.empty else claim, max_rows=20)]))
+    claim_lines = [
+        "# Cooperation Claim Boundary",
+        "",
+        *main_claim_boundary_lines(),
+        "",
+        "## Cooperation Boundary",
+        "",
+        "- Claim eligibility requires validation-only selection, full 30-stock coverage, leakage audit pass, stability audit, and no high overfit risk.",
+        "- Descriptive final leaderboard rows do not override validation-only selection.",
+        "- No trading, profitability, investment recommendation, or live-deployment claim is made.",
+        "",
+        "## Claim Eligible Rows",
+        "",
+        fair.markdown_table(claim[["candidate_id", "track", "model_id", "validation_accuracy", "final_accuracy", "overfit_risk"]] if not claim.empty else claim, max_rows=20),
+    ]
+    write_markdown(OUTPUT_DIR / "cooperation_claim_boundary.md", "\n".join(claim_lines))
     write_csv(OUTPUT_DIR / "soft_vote_weights.csv", soft_weights)
     write_csv(OUTPUT_DIR / "error_correction_summary.csv", error_summary)
     write_csv(OUTPUT_DIR / "mixture_of_experts_summary.csv", mixture_summary)

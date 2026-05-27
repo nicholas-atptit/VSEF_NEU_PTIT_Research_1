@@ -70,6 +70,12 @@ from scripts.research.vn30_hourly_dual_track_common import (  # noqa: E402
     add_absolute_labels,
     rel,
 )
+from scripts.research.vn30_comprehensive_paper_framing import (  # noqa: E402
+    FULL_HORIZON_ROLE_PARAGRAPHS,
+    PAPER_TITLE,
+    academic_role_lines,
+    main_claim_boundary_lines,
+)
 
 warnings.filterwarnings("ignore", message="Skipping features without any observed values.*")
 warnings.filterwarnings("ignore", message="X does not have valid feature names.*")
@@ -1149,6 +1155,10 @@ def write_reports(
     summary = [
         "# VN30 Legacy Full-Horizon Model Comparison",
         "",
+        f"Paper title: {PAPER_TITLE}",
+        "",
+        *academic_role_lines("Academic Role in the Comprehensive Paper", FULL_HORIZON_ROLE_PARAGRAPHS),
+        "",
         "## Scope",
         "",
         "- Horizons: h20, h40, h60, h80.",
@@ -1196,6 +1206,8 @@ def write_reports(
 
     claim_lines = [
         "# VN30 Legacy Full-Horizon Claim Boundary",
+        "",
+        *main_claim_boundary_lines(),
         "",
         "## Audit Checks",
         "",

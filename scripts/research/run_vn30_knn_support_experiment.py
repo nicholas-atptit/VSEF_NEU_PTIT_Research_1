@@ -45,6 +45,12 @@ from scripts.research.run_vn30_hourly_validation_safe_improvement_tracks import 
     VAL_START,
 )
 from scripts.research.vn30_hourly_dual_track_common import REPO_ROOT, active_stock_tickers, add_absolute_labels, rel  # noqa: E402
+from scripts.research.vn30_comprehensive_paper_framing import (  # noqa: E402
+    KNN_SUPPORT_ROLE_PARAGRAPHS,
+    PAPER_TITLE,
+    academic_role_lines,
+    main_claim_boundary_lines,
+)
 
 warnings.filterwarnings("ignore", message="Skipping features without any observed values.*")
 warnings.filterwarnings("ignore", message="X does not have valid feature names.*")
@@ -790,6 +796,12 @@ def write_reports(
             [
                 "# KNN Support Experiment Summary",
                 "",
+                f"Paper title: {PAPER_TITLE}",
+                "",
+                *academic_role_lines("Academic Role in the Comprehensive Paper", KNN_SUPPORT_ROLE_PARAGRAPHS),
+                "",
+                "## Run Scope",
+                "",
                 f"- Candidate rows: {len(candidate_grid)}.",
                 f"- Successful results: {int(final_results['status'].astype(str).eq('ok').sum())}.",
                 f"- Primary horizon: h{PRIMARY_HORIZON}.",
@@ -819,6 +831,10 @@ def write_reports(
         "\n".join(
             [
                 "# KNN Support Claim Boundary",
+                "",
+                *main_claim_boundary_lines(),
+                "",
+                "## KNN Support Boundary",
                 "",
                 "- KNN is tested as an auxiliary similarity/probability/regime/calibration signal, not as a standalone main claim.",
                 "- Claim eligibility requires validation-only selection, full 30-stock coverage, non-standalone KNN role, no final-label use, leakage audit pass, and no high overfit risk.",

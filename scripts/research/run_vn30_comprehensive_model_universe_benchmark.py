@@ -108,6 +108,13 @@ from scripts.research.vn30_hourly_dual_track_common import (  # noqa: E402
     add_absolute_labels,
     rel,
 )
+from scripts.research.vn30_comprehensive_paper_framing import (  # noqa: E402
+    PAPER_TITLE,
+    benchmark_response_lines,
+    contribution_lines,
+    main_claim_boundary_lines,
+    research_gap_lines,
+)
 
 warnings.filterwarnings("ignore", message="Skipping features without any observed values.*")
 warnings.filterwarnings("ignore", message="X does not have valid feature names.*")
@@ -712,6 +719,18 @@ def classify_overfit_risk(row: pd.Series) -> tuple[str, str]:
     if reasons:
         return "medium", "; ".join(reasons)
     return "low", "validation-final gap and stability slices do not show a major post-hoc warning"
+
+
+def selected_claim_ineligibility_reason(row: pd.Series) -> str:
+    if not bool(row.get("full_ticker_coverage", False)):
+        return "selected but missing full ticker coverage"
+    risk = str(row.get("overfit_risk", "")).lower()
+    gap = as_float(row.get("validation_final_gap"))
+    if risk == "high" and math.isfinite(gap) and gap > 0.05:
+        return "selected but high validation-final gap / poor final transfer / high overfit risk"
+    if risk == "high":
+        return "selected but high overfit risk"
+    return "selected but did not satisfy claim eligibility checks"
 
 
 def result_row(
@@ -1801,17 +1820,15 @@ def update_selection(final_results: pd.DataFrame) -> pd.DataFrame:
     selected = selection_pool.sort_values(["validation_accuracy", "validation_rows", "candidate_id"], ascending=[False, False, True]).iloc[0]
     selected_id = str(selected["candidate_id"])
     out.loc[out["candidate_id"].astype(str).eq(selected_id), "selected_by_validation_yes_no"] = "yes"
-    mask = out["candidate_id"].astype(str).eq(selected_id)
-    out.loc[mask, "claim_eligible_yes_no"] = np.where(
-        out.loc[mask, "full_ticker_coverage"].astype(bool),
-        "yes",
-        "no",
-    )
-    out.loc[mask & out["claim_eligible_yes_no"].eq("yes"), "reason_not_claim_eligible"] = ""
-    out.loc[mask & out["claim_eligible_yes_no"].eq("no"), "reason_not_claim_eligible"] = "selected but missing full ticker coverage"
     risk_values = out.apply(classify_overfit_risk, axis=1)
     out["overfit_risk"] = [risk for risk, _ in risk_values]
     out["overfit_risk_reason"] = [reason for _, reason in risk_values]
+    mask = out["candidate_id"].astype(str).eq(selected_id)
+    eligible = out.loc[mask, "full_ticker_coverage"].astype(bool) & ~out.loc[mask, "overfit_risk"].astype(str).str.lower().eq("high")
+    out.loc[mask, "claim_eligible_yes_no"] = np.where(eligible, "yes", "no")
+    out.loc[mask & out["claim_eligible_yes_no"].eq("yes"), "reason_not_claim_eligible"] = ""
+    ineligible_mask = mask & out["claim_eligible_yes_no"].eq("no")
+    out.loc[ineligible_mask, "reason_not_claim_eligible"] = out.loc[ineligible_mask].apply(selected_claim_ineligibility_reason, axis=1)
     return out
 
 
@@ -1952,6 +1969,16 @@ def write_reports(
     lines = [
         "# Model Universe Summary",
         "",
+        f"Paper title: {PAPER_TITLE}",
+        "",
+        *research_gap_lines(),
+        "",
+        *benchmark_response_lines(),
+        "",
+        *contribution_lines(),
+        "",
+        "## Run Scope",
+        "",
         f"- Exhaustive full run: {EXHAUSTIVE_FULL_RUN}.",
         f"- Total model groups listed: {registry['model_group'].nunique()}.",
         f"- Total model variants planned: {len(registry)}.",
@@ -1969,7 +1996,7 @@ def write_reports(
         "",
         "## Validation-Selected Row",
         "",
-        markdown_table(selected[["candidate_id", "model_group", "model_id", "feature_family", "horizon", "threshold_policy", "validation_accuracy", "final_accuracy", "ticker_coverage", "claim_eligible_yes_no"]], max_rows=5),
+        markdown_table(selected[["candidate_id", "model_group", "model_id", "feature_family", "horizon", "threshold_policy", "validation_accuracy", "final_accuracy", "ticker_coverage", "claim_eligible_yes_no", "reason_not_claim_eligible"]], max_rows=5),
         "",
         "## Top Final Accuracy Rows",
         "",
@@ -1979,6 +2006,10 @@ def write_reports(
     claim_lines = [
         "# Model Universe Claim Boundary",
         "",
+        *main_claim_boundary_lines(),
+        "",
+        "## Run Audit Context",
+        "",
         "- Final-window scores are scoring-only and are not used for model, feature, threshold, horizon, ensemble, calibration, or router selection.",
         "- The current h40 paper result remains Logistic L2 / baseline_C_closest / h40 / validation-selected threshold 0.55 / 61.63% unless a new model is validation-selected, full-coverage, and audit-passed.",
         "- GARCH is diagnostic only and not a direct headline direction classifier.",
@@ -1987,7 +2018,7 @@ def write_reports(
         f"- GARCH diagnostic status: {garch_status}.",
         "- No trading, profitability, investment recommendation, or live-deployment claim is made.",
         "",
-        markdown_table(selected[["candidate_id", "model_id", "validation_accuracy", "final_accuracy", "beats_61_63_yes_no", "claim_eligible_yes_no", "overfit_risk"]], max_rows=5),
+        markdown_table(selected[["candidate_id", "model_id", "validation_accuracy", "final_accuracy", "beats_61_63_yes_no", "claim_eligible_yes_no", "reason_not_claim_eligible", "overfit_risk"]], max_rows=5),
     ]
     write_markdown(OUTPUT_DIR / "model_universe_claim_boundary.md", "\n".join(claim_lines))
 
