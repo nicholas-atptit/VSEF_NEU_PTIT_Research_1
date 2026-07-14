@@ -9,14 +9,6 @@ A research repository for Vietnamese market directional forecasting benchmarks, 
 - A data forensics and reproducibility workspace.
 - A stock/index directional research workspace with preserved evidence artifacts.
 
-## What This Repo Is Not
-
-- Not a live trading system.
-- Not an investment recommendation engine.
-- Not a profitability guarantee.
-- Not a full 2015-start hourly stock benchmark.
-- Not the old VSEF project identity anymore.
-
 ## Active Tracks
 
 - Stock hourly available-window benchmark.
@@ -97,15 +89,6 @@ python scripts/check_runtime_preflight.py
 
 These commands are validation only. They do not run benchmarks, fetch market data, train models, or generate paper/DOCX artifacts.
 
-## Development Rules
-
-- No tags by default.
-- No `git push --mirror` for normal branch work.
-- No benchmark rerun without a written protocol.
-- No data fetch without a written protocol.
-- No final-label tuning.
-- No paper/DOCX generation unless explicitly requested.
-- No claim without artifact support.
-- Keep active research work on the current research branch unless explicitly directed otherwise.
+ork on the current research branch unless explicitly directed otherwise.
 
 See `docs/USAGE.md` and `docs/RESEARCH_WORKFLOW.md` for operating details.
